@@ -144,35 +144,20 @@ nav {
     animation: fadeIn 1.2s 0.3s forwards;
 }
 
-.hero-lottie {
-    position: absolute;
-    right: -10%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60%;
-    height: 80%;
+.global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
     pointer-events: none;
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
-@media (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
-    .hero-lottie {
-        position: relative;
-        right: 0;
-        top: 0;
-        transform: none;
-        width: 100%;
-        height: 400px;
-        order: -1;
-    }
-    .hero p {
-        margin: 0 auto 3rem;
-    }
+.global-background svg {
+    width: 100%;
+    height: 100%;
 }
 
 /* Button Premium */

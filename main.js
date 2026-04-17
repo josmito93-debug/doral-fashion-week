@@ -8,7 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
             renderer: 'svg',
             loop: true,
             autoplay: true,
-            path: 'https://cdn.prod.website-files.com/64cd7f5a31615eaba3c0956d/64d5976ec05e491caa0d75ff_banner-phone.json'
+            path: 'https://cdn.prod.website-files.com/64cd7f5a31615eaba3c0956d/64d5976ec05e491caa0d75ff_banner-phone.json',
+            rendererSettings: {
+                preserveAspectRatio: 'xMidYMid slice'
+            }
         });
     }
 
