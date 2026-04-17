@@ -1,0 +1,281 @@
+/* 
+    Doral Fashion Week - Design System
+    Inspired by Timeral Agency Aesthetic
+*/
+
+:root {
+    --bg-primary: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --accent: #D4AF37; /* Gold */
+    --font-heading: 'Quotesa', serif;
+    --font-body: 'Visby CF', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@font-face {
+    font-family: 'Quotesa';
+    src: url('./Font/Quotesa.otf') format('opentype'),
+         url('./Font/Quotesa.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('./second font/VisbyCF-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Visby CF';
+    src: url('./second font/VisbyCF-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(5,5,5,0.8), transparent);
+    backdrop-filter: blur(10px);
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealUp 1s forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeIn 1.2s 0.3s forwards;
+}
+
+.hero-lottie {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    height: 80%;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .hero-lottie {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        height: 400px;
+        order: -1;
+    }
+    .hero p {
+        margin: 0 auto 3rem;
+    }
+}
+
+/* Button Premium */
+.btn-premium {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.btn-premium:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-primary);
+}
+
+/* Animations */
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Sections */
+section {
+    padding: 10rem 0;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+/* Designer Grid */
+.designer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.designer-card {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: #111;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.designer-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.designer-card:hover img {
+    transform: scale(1.05);
+}
+
+.designer-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.designer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.designer-info span {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 900px) {
+    .designer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .designer-grid {
+        grid-template-columns: 1fr;
+    }
+}
