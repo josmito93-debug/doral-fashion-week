@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Apply reveal to sections and cards
-    const revealElements = document.querySelectorAll('.designer-card, #about, .section-title');
+    const revealElements = document.querySelectorAll('.app-card, .edition-block, .section-title, .about-grid');
     revealElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -39,13 +39,53 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(el);
     });
 
+    // Generate Editions 4-10
+    const extraEditionsContainer = document.getElementById('extra-editions');
+    const seasonNames = ['FOURTH', 'FIFTH', 'SIXTH', 'SEVENTH', 'EIGHTH', 'NINTH', 'TENTH'];
+    
+    if (extraEditionsContainer) {
+        seasonNames.forEach((season, index) => {
+            const num = index + 4;
+            const year = 2023 + index + 1;
+            const editionHtml = `
+                <div class="edition-block">
+                    <div class="edition-header">
+                        <span class="edition-tag">${season} SEASSON</span>
+                        <h3>${num}th Edition - Doral Fashion Week ${year}: "Future of Elegance"</h3>
+                        <p>Continuing the legacy of innovation, the ${num}th edition pushed the boundaries of fashion and technology...</p>
+                    </div>
+                    <div class="gallery-grid">
+                        ${[1,2,3,4,5,6].map(i => `
+                            <div class="gallery-item">
+                                <img src="https://images.unsplash.com/photo-${1500000000000 + (num*i*1000)}?auto=format&fit=crop&w=400" alt="DFW ${num}">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            extraEditionsContainer.insertAdjacentHTML('beforeend', editionHtml);
+        });
+
+        // Re-observe new elements
+        document.querySelectorAll('#extra-editions .edition-block').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+            revealObserver.observe(el);
+        });
+    }
+
     // Smooth Scroll for Nav Links
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetId = this.getAttribute('href');
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+                const target = document.querySelector(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
         });
     });
 
