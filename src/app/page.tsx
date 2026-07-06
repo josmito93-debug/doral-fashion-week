@@ -137,7 +137,6 @@ export default function Home() {
             {/* Model Application Row */}
             <Link href="/apply/model" className="app-row-btn">
               <div className="app-row-left">
-                <div className="app-row-hud">01 // MDL.DIV</div>
                 <div>
                   <span className="app-row-title">Models Application</span>
                   <span className="app-row-desc">Your Gateway to Runway Stardom – Shine Bright and Define Fashion Trends</span>
@@ -152,7 +151,6 @@ export default function Home() {
             {/* Staff Application Row */}
             <Link href="/apply/staff" className="app-row-btn">
               <div className="app-row-left">
-                <div className="app-row-hud">02 // STF.DIV</div>
                 <div>
                   <span className="app-row-title">Staff Application</span>
                   <span className="app-row-desc">Behind-the-Scenes Excellence – Join Our Backstage Elite Team</span>
@@ -167,7 +165,6 @@ export default function Home() {
             {/* Designer Application Row */}
             <Link href="/apply/designer" className="app-row-btn">
               <div className="app-row-left">
-                <div className="app-row-hud">03 // DSN.DIV</div>
                 <div>
                   <span className="app-row-title">Designers Application</span>
                   <span className="app-row-desc">Cultivate Your Vision, Transform the Fashion Landscape and Runway</span>
@@ -182,7 +179,6 @@ export default function Home() {
             {/* Makeup Application Row */}
             <Link href="/apply/makeup" className="app-row-btn">
               <div className="app-row-left">
-                <div className="app-row-hud">04 // MUA.DIV</div>
                 <div>
                   <span className="app-row-title">Make-Ups Application</span>
                   <span className="app-row-desc">Unleash Your Artistry, Transform Beauty and Direct Visual Aesthetics</span>
@@ -197,7 +193,6 @@ export default function Home() {
             {/* Photographer Application Row */}
             <Link href="/apply/photographer" className="app-row-btn">
               <div className="app-row-left">
-                <div className="app-row-hud">05 // PHO.DIV</div>
                 <div>
                   <span className="app-row-title">Photographers Application</span>
                   <span className="app-row-desc">Capture Fashion's Essence, Frame Elegance and Tell Brand Stories</span>
