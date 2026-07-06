@@ -90,16 +90,67 @@ export async function POST(req: NextRequest) {
       to: [data.email, 'jose@idolfashiontheelitelab.com'],
       subject: content.subject,
       html: `
-        <div style="font-family: 'Helvetica', sans-serif; background-color: #ffffff; color: #000000; padding: 40px; border: 1px solid #eeeeee;">
-          <h1 style="color: #000000; text-transform: uppercase; letter-spacing: 2px; font-size: 20px;">${content.title}</h1>
-          <p style="color: #666666; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;">DORAL FASHION WEEK</p>
-          <hr style="border: 0; border-top: 1px solid #eeeeee; margin: 20px 0;" />
-          <p style="font-size: 14px; line-height: 1.6;">Dear <strong>${data.fullName}</strong>,</p>
-          <p style="font-size: 14px; line-height: 1.6;">${content.message}</p>
-          <p style="font-size: 14px; line-height: 1.6; margin-top: 20px;">Please find your signed agreement attached to this email for your professional records.</p>
-          <div style="margin-top: 50px; font-size: 10px; color: #999999; border-top: 1px solid #f5f5f5; padding-top: 20px;">
-            <p>DORAL FASHION WEEK LLC</p>
-            <p>DORAL, FL, USA</p>
+        <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #050505; padding: 40px 20px; color: #ffffff; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: #000000; border: 1px solid rgba(212, 175, 55, 0.25); border-radius: 8px; text-align: left; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+            
+            <!-- Top Brand Header Banner -->
+            <div style="background-color: #000000; padding: 40px 30px; border-bottom: 1px solid rgba(255,255,255,0.06); text-align: center;">
+              <!-- Elegant DFW Typographic Logo -->
+              <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 26px; font-weight: bold; letter-spacing: 6px; color: #ffffff; display: block; line-height: 1.1; text-transform: uppercase;">DORAL</span>
+              <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: bold; letter-spacing: 8px; color: #D4AF37; display: block; margin-top: 5px; text-transform: uppercase;">FASHION WEEK</span>
+            </div>
+
+            <!-- Email Content Body -->
+            <div style="padding: 40px 30px; line-height: 1.7; color: rgba(255, 255, 255, 0.85); font-size: 14px;">
+              <h2 style="color: #ffffff; font-size: 18px; font-weight: 300; letter-spacing: 1px; text-transform: uppercase; margin-top: 0; margin-bottom: 25px; border-left: 3px solid #D4AF37; padding-left: 15px;">
+                ${content.title}
+              </h2>
+              
+              <p style="margin-bottom: 20px;">Dear <strong>${data.fullName}</strong>,</p>
+              
+              <p style="margin-bottom: 20px; font-weight: 300;">${content.message}</p>
+              
+              <p style="margin-bottom: 30px; font-weight: 300;">Please find your signed agreement attached to this email as a PDF copy for your professional records.</p>
+              
+              <!-- Status Box -->
+              <div style="background-color: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.15); border-radius: 6px; padding: 20px; text-align: center;">
+                <span style="font-size: 10px; letter-spacing: 2px; color: #D4AF37; text-transform: uppercase; display: block; margin-bottom: 5px;">Admission Status</span>
+                <span style="font-size: 14px; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;">UNDER EXECUTIVE REVIEW</span>
+              </div>
+            </div>
+
+            <!-- Corporate Footer -->
+            <div style="background-color: #030303; padding: 40px 30px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.45);">
+              
+              <div style="margin-bottom: 20px;">
+                <span style="font-size: 14px; font-weight: bold; letter-spacing: 2px; color: #ffffff; display: block; text-transform: uppercase; margin-bottom: 5px;">DORAL FASHION WEEK</span>
+                <span style="font-size: 11px; color: #D4AF37; display: block; font-weight: bold; margin-bottom: 8px;">Haute Couture Fashion House</span>
+                <div style="display: inline-block; background-color: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 5px 10px; border-radius: 4px;">
+                  <span style="color: #D4AF37; font-size: 12px; margin-right: 5px;">★ 4.6</span>
+                  <span style="color: rgba(255,255,255,0.6); font-size: 10px;">Google Rating (Reviews)</span>
+                </div>
+              </div>
+              
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                <p style="margin: 0 0 10px 0;">
+                  <strong>Showroom & HQ Address:</strong><br />
+                  Alhambra Business Center<br />
+                  4805 NW 79th Ave #3, Doral, FL 33166, USA
+                </p>
+                <p style="margin: 0 0 10px 0;">
+                  <strong>Phone:</strong> <a href="tel:+17866475982" style="color: #D4AF37; text-decoration: none;">+1 786-647-5982</a>
+                </p>
+                <p style="margin: 0 0 15px 0;">
+                  <strong>Hours:</strong> Open · Closes 7 PM
+                </p>
+              </div>
+              
+              <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; text-align: center; font-size: 10px; color: rgba(255,255,255,0.3);">
+                &copy; 2026 Doral Fashion Week LLC. All Rights Reserved.
+              </div>
+              
+            </div>
+
           </div>
         </div>
       `,

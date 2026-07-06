@@ -414,6 +414,26 @@ export default function Home() {
             <p>Have a question in mind? <a href="mailto:info@doralfashionweek.com">talk to us</a></p>
           </div>
           <div className="footer-links">
+            <div className="footer-col" style={{ minWidth: '240px' }}>
+              <h4>Headquarters</h4>
+              <p className="text-[var(--text-secondary)] text-xs leading-relaxed mb-4">
+                <strong>Alhambra Business Center</strong><br />
+                4805 NW 79th Ave #3<br />
+                Doral, FL 33166, United States
+              </p>
+              <p className="text-[var(--text-secondary)] text-xs mb-2">
+                <strong>Phone:</strong> <a href="tel:+17866475982" className="text-[var(--accent)] hover:text-white transition-colors">+1 786-647-5982</a>
+              </p>
+              <p className="text-[var(--text-secondary)] text-xs mb-4">
+                <strong>Hours:</strong> Open · Closes 7 PM
+              </p>
+              <div className="flex items-center gap-1.5 mt-4 text-[10px] text-white/30 uppercase tracking-wider">
+                <span className="text-[var(--accent)]">★ 4.6</span> 
+                <span>Google Rating</span>
+                <span className="text-white/10">|</span>
+                <span>Haute Couture</span>
+              </div>
+            </div>
             <div className="footer-col">
               <h4>Editions</h4>
               <a href="#editions" onClick={(e) => handleSmoothScroll(e, '#editions')}>Edition 1</a>
@@ -425,7 +445,7 @@ export default function Home() {
               <h4>Applications</h4>
               <Link href="/apply/model" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Models</Link>
               <Link href="/apply/staff" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Staff</Link>
-              <Link href="/apply/designer" className="block text-left text-[var(--text-secondary)] hover:text(--accent) mb-4 transition-all duration-300 hover:pl-2">Designers</Link>
+              <Link href="/apply/designer" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Designers</Link>
               <Link href="/apply/photographer" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Photographers</Link>
             </div>
             <div className="footer-col">
