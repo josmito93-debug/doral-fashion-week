@@ -226,7 +226,9 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                   <span className="big-text brand-text text-6xl">02</span>
                 </div>
 
-                <h4 className="text-xl brand-text uppercase mb-8 underline underline-offset-8 text-accent font-bold">Step 02: Candidate Data</h4>
+                <div className="mb-10 pb-4 border-b border-white/10 w-full">
+                  <h4 className="text-xl brand-text uppercase text-accent font-bold">Step 02: Candidate Data</h4>
+                </div>
                 <form className="space-y-10" onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
                   <div className="form-grid">
                     <div className="flex flex-col">
