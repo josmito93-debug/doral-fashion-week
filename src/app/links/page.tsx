@@ -101,7 +101,7 @@ export default function LinksPage() {
   ]
 
   return (
-    <main className="bg-[#020202] min-h-screen relative py-20 px-6 text-white flex flex-col items-center justify-between overflow-hidden">
+    <main className="bg-[#020202] min-h-screen relative py-16 px-8 md:px-12 text-white flex flex-col items-center justify-between overflow-hidden">
       
       {/* Premium Gradient-Border Scoped CSS Styles */}
       <style dangerouslySetInnerHTML={{__html: `
@@ -142,9 +142,14 @@ export default function LinksPage() {
           position: relative;
           background: #050505;
           border-radius: 11px;
-          padding: 1.5rem 1.8rem;
+          padding: 1rem 1.2rem;
           z-index: 2;
           transition: background 0.4s ease;
+        }
+        @media (min-width: 768px) {
+          .gradient-border-card-inner {
+            padding: 1.25rem 1.5rem;
+          }
         }
         .gradient-border-card:hover .gradient-border-card-inner {
           background: #000000;
@@ -155,41 +160,41 @@ export default function LinksPage() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[var(--accent)]/10 rounded-full blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[var(--accent)]/5 rounded-full blur-[100px] pointer-events-none z-0" />
       
-      <div className="w-full max-w-lg mx-auto relative z-10 flex flex-col items-center">
+      <div className="w-full max-w-[420px] mx-auto relative z-10 flex flex-col items-center">
         
         {/* Logo and Header */}
-        <div className="text-center mb-12">
-          <Link href="/" className="inline-flex justify-center items-center mb-4">
+        <div className="text-center mb-10">
+          <Link href="/" className="inline-flex justify-center items-center mb-3">
             <img 
               src="/logo/logo doral FW.png" 
               alt="Doral Fashion Week Logo" 
-              className="h-14 object-contain hover:scale-105 transition-transform duration-500" 
+              className="h-11 object-contain hover:scale-105 transition-transform duration-500" 
             />
           </Link>
-          <h1 className="text-2xl md:text-3xl font-heading text-white tracking-[0.08em] uppercase">
+          <h1 className="text-lg md:text-xl font-heading text-white tracking-[0.08em] uppercase">
             DORAL FASHION WEEK
           </h1>
-          <span className="text-[9px] tracking-[0.45em] text-[var(--accent)] uppercase block mt-2 opacity-90 font-medium">
+          <span className="text-[8px] tracking-[0.45em] text-[var(--accent)] uppercase block mt-1.5 opacity-90 font-medium">
             Official Links Portal
           </span>
         </div>
 
         {/* Links Stack */}
-        <div className="w-full flex flex-col gap-5 mb-16">
+        <div className="w-full flex flex-col gap-3.5 mb-12">
           {links.map((link, idx) => {
             const isExternal = link.external
             const Content = (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 {/* SVG Icon Box */}
-                <div className="w-10 h-10 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[var(--accent)]/10 group-hover:border-[var(--accent)]/20 transition-all duration-300">
+                <div className="w-8.5 h-8.5 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[var(--accent)]/10 group-hover:border-[var(--accent)]/20 transition-all duration-300 flex-shrink-0">
                   {link.icon}
                 </div>
                 <div className="flex flex-col text-left">
-                  <span className="font-heading text-base md:text-lg uppercase tracking-wide group-hover:text-[var(--accent)] transition-colors duration-300">
+                  <span className="font-heading text-sm md:text-base uppercase tracking-wide group-hover:text-[var(--accent)] transition-colors duration-300">
                     {link.label}
                   </span>
                   {link.subtitle && (
-                    <span className="text-[10px] text-white/40 group-hover:text-white/60 transition-colors duration-300 font-light mt-0.5">
+                    <span className="text-[9px] text-white/40 group-hover:text-white/60 transition-colors duration-300 font-light mt-0.5">
                       {link.subtitle}
                     </span>
                   )}
