@@ -113,12 +113,14 @@ nav {
 
 @media (max-width: 768px) {
     nav {
-        grid-template-columns: 1fr;
-        justify-content: center;
-        height: auto;
-        padding: 1rem;
-        border-radius: 20px;
-        top: 1rem;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        height: 60px !important;
+        padding: 0 1.5rem !important;
+        border-radius: 50px !important;
+        top: 1rem !important;
+        width: calc(100% - 2.5rem) !important;
     }
     
     .nav-col-left, .nav-col-right {
@@ -127,8 +129,8 @@ nav {
     
     .logo {
         display: flex;
-        justify-content: center;
-        width: 100%;
+        justify-content: flex-start;
+        width: auto;
     }
 }
 

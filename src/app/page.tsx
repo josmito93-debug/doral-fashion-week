@@ -1,10 +1,12 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import lottie from 'lottie-web'
 import Link from 'next/link'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const lottieContainerRef = useRef<HTMLDivElement>(null)
 
   // Initialize Lottie Animation
@@ -92,7 +94,82 @@ export default function Home() {
           <a href="#editions" onClick={(e) => handleSmoothScroll(e, '#editions')}>Editions</a>
           <a href="#magazine" onClick={(e) => handleSmoothScroll(e, '#magazine')}>MAGAZINE</a>
         </div>
+
+        {/* Hamburger Toggle Button (Mobile Only) */}
+        <button 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-[1100] cursor-pointer focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          <div className="w-6 h-4 relative">
+            <span className={`absolute h-[2px] bg-white rounded-full transition-all duration-300 left-0 ${mobileMenuOpen ? 'top-2 rotate-45 w-full' : 'top-0 w-full'}`} />
+            <span className={`absolute h-[2px] bg-white rounded-full transition-all duration-300 left-0 top-2 w-full ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`absolute h-[2px] bg-white rounded-full transition-all duration-300 left-0 ${mobileMenuOpen ? 'top-2 -rotate-45 w-full' : 'top-4 w-full'}`} />
+          </div>
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="fixed inset-0 bg-[#020202]/98 backdrop-blur-2xl z-[900] flex flex-col justify-center items-center px-8"
+          >
+            {/* Ambient lighting glows inside the mobile menu */}
+            <div className="absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-[var(--accent)]/10 rounded-full blur-[80px] pointer-events-none z-0" />
+            
+            <div className="flex flex-col items-center gap-8 w-full max-w-xs relative z-10 text-center">
+              <Link 
+                href="/" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="mb-6"
+              >
+                <img src="/logo/logo doral FW.png" alt="Logo" className="h-14 object-contain" />
+              </Link>
+              
+              <a 
+                href="#home" 
+                onClick={(e) => { setMobileMenuOpen(false); handleSmoothScroll(e, '#home'); }}
+                className="font-heading text-xl uppercase tracking-wider text-white hover:text-[var(--accent)] transition-colors py-2.5 border-b border-white/5 w-full block"
+              >
+                Home
+              </a>
+              <a 
+                href="#applications" 
+                onClick={(e) => { setMobileMenuOpen(false); handleSmoothScroll(e, '#applications'); }}
+                className="font-heading text-xl uppercase tracking-wider text-white hover:text-[var(--accent)] transition-colors py-2.5 border-b border-white/5 w-full block"
+              >
+                Applications
+              </a>
+              <a 
+                href="#about" 
+                onClick={(e) => { setMobileMenuOpen(false); handleSmoothScroll(e, '#about'); }}
+                className="font-heading text-xl uppercase tracking-wider text-white hover:text-[var(--accent)] transition-colors py-2.5 border-b border-white/5 w-full block"
+              >
+                About Us
+              </a>
+              <a 
+                href="#editions" 
+                onClick={(e) => { setMobileMenuOpen(false); handleSmoothScroll(e, '#editions'); }}
+                className="font-heading text-xl uppercase tracking-wider text-white hover:text-[var(--accent)] transition-colors py-2.5 border-b border-white/5 w-full block"
+              >
+                Editions
+              </a>
+              <a 
+                href="#magazine" 
+                onClick={(e) => { setMobileMenuOpen(false); handleSmoothScroll(e, '#magazine'); }}
+                className="font-heading text-xl uppercase tracking-wider text-[var(--accent)] hover:text-white transition-colors py-2.5 border-b border-white/5 w-full block"
+              >
+                Magazine
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <main id="home">
         {/* Hero Section (Contains local Lottie background, ambient glow and bottom fade overlay) */}
