@@ -163,12 +163,12 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full flex flex-col"
+            className="w-full flex flex-col pt-6 pb-10"
           >
             {ROLES.map((r) => (
               <div
                 key={r.id}
-                className="group w-full flex flex-col md:flex-row md:items-end justify-between gap-4 py-6 px-4 relative overflow-hidden border-b border-white/10 hover:bg-white/[0.02] transition-colors"
+                className="group w-full flex flex-col md:flex-row md:items-end justify-between gap-4 py-10 px-6 md:py-14 md:px-12 relative overflow-hidden border-b border-white/10 hover:bg-white/[0.02] transition-colors"
               >
                   <div className="flex-1 text-left">
                     <motion.h4 
