@@ -1025,7 +1025,7 @@ footer {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
 }
 
-/* Bottom gold line - animated to draw left-to-right on hover */
+/* Bottom gold line - animated to draw left-to-right continuously */
 .app-row-btn::after {
     content: '';
     position: absolute;
@@ -1034,15 +1034,43 @@ footer {
     width: 100%;
     height: 2px;
     background: var(--accent) !important; /* Gold */
-    transform: scaleX(0);
     transform-origin: left;
-    opacity: 0;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    animation: drawLineLoop 4s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0.8;
 }
 
 .app-row-btn:hover::after {
-    transform: scaleX(1);
-    opacity: 1;
+    animation: none !important;
+    transform: scaleX(1) !important;
+    opacity: 1 !important;
+    height: 3px !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.6) !important;
+}
+
+@keyframes drawLineLoop {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.8;
+    }
+    45% {
+        transform: scaleX(1);
+        opacity: 0.8;
+    }
+    60% {
+        transform: scaleX(1);
+        opacity: 0.8;
+    }
+    80% {
+        transform: scaleX(1);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
 }
 
 .app-row-left {
