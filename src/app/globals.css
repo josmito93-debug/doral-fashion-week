@@ -1190,193 +1190,174 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Magazine Section Custom Styles */
-.magazine-section {
-    position: relative;
-    width: 100%;
-    height: 520px;
-    background-color: #000000;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    display: flex;
+/* Magazine Section Grid and Accordion Styles */
+.magazine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    text-decoration: none;
+    width: 100%;
 }
 
-.magazine-section:hover {
-    border-color: rgba(212, 175, 55, 0.3);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+@media (max-width: 1024px) {
+    .magazine-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
 }
 
-.magazine-covers-container {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+.magazine-info-col {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    justify-content: center;
-    opacity: 0.22;
-    transition: opacity 0.5s ease;
+    align-items: flex-start;
+}
+
+/* Typographic Logo for DFW Magazine using only project fonts */
+.magazine-logo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 0.85;
+    margin-bottom: 2rem;
     pointer-events: none;
 }
 
-.magazine-section:hover .magazine-covers-container {
-    opacity: 0.4;
-}
-
-.magazine-row {
-    display: flex;
-    gap: 1.5rem;
-    width: max-content;
-    will-change: transform;
-}
-
-.magazine-marquee-left {
-    animation: slideLeft 45s linear infinite;
-}
-
-.magazine-marquee-right {
-    animation: slideRight 45s linear infinite;
-}
-
-.magazine-card {
-    position: relative;
-    width: 160px;
-    height: 230px;
-    border-radius: 6px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-    background: #111;
-}
-
-.magazine-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(20%) brightness(0.9);
-}
-
-.magazine-card-masthead {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
+.magazine-logo-title {
     font-family: var(--font-heading) !important;
-    font-size: 0.72rem;
+    font-size: clamp(3rem, 5vw, 4.5rem);
     color: #ffffff;
-    letter-spacing: 0.2em;
+    letter-spacing: -0.02em;
     text-transform: uppercase;
     font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-.magazine-card-footer {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    font-family: var(--font-body) !important;
-    font-size: 0.48rem;
-    color: var(--accent);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
-}
-
-.magazine-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    background: radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.92) 100%);
-    pointer-events: none;
-}
-
-.magazine-content-box {
-    position: relative;
-    z-index: 3;
-    max-width: 650px;
-    text-align: center;
-    padding: 2.8rem;
-    border-radius: 12px;
-    background: rgba(8, 8, 8, 0.75);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.magazine-section:hover .magazine-content-box {
-    background: rgba(8, 8, 8, 0.9);
-    border-color: rgba(212, 175, 55, 0.25);
-    transform: scale(1.02);
-}
-
-.magazine-subtitle {
-    font-family: var(--font-body) !important;
-    font-size: 0.72rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.magazine-title {
+.magazine-logo-sub {
     font-family: var(--font-heading) !important;
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    color: var(--accent);
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
 }
 
-.magazine-description {
+.magazine-logo-tag {
     font-family: var(--font-body) !important;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 2rem;
-    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.52em;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    margin-top: 0.8rem;
+    padding-left: 0.2rem;
 }
 
-@keyframes slideLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes slideRight {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+.magazine-accordion {
+    display: flex;
+    width: 100%;
+    height: 480px;
+    gap: 0.8rem;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
-    .magazine-section {
-        height: 420px;
+    .magazine-accordion {
+        height: 380px;
+        gap: 0.5rem;
     }
-    .magazine-card {
-        width: 110px;
-        height: 160px;
-    }
-    .magazine-card-masthead {
-        font-size: 0.55rem;
-        top: 6px;
-    }
-    .magazine-content-box {
-        padding: 1.8rem;
-        margin: 1.5rem;
-    }
+}
+
+.accordion-panel {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: flex 0.65s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, box-shadow 0.5s ease !important;
+}
+
+.accordion-panel:hover {
+    flex: 3.5 !important;
+    border-color: rgba(212, 175, 55, 0.3) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+}
+
+.accordion-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(60%) brightness(0.55);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease !important;
+}
+
+.accordion-panel:hover img {
+    filter: grayscale(0%) brightness(0.9);
+    transform: scale(1.04);
+}
+
+.accordion-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    pointer-events: none;
+}
+
+.accordion-info {
+    position: absolute;
+    bottom: 2rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    pointer-events: none;
+}
+
+.accordion-panel:hover .accordion-info {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+.accordion-panel-tag {
+    font-family: monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.accordion-panel-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    color: #ffffff;
+    text-transform: uppercase;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.accordion-masthead {
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accordion-panel:hover .accordion-masthead {
+    color: #ffffff;
+    font-size: 0.8rem;
+    letter-spacing: 0.48em;
+    text-shadow: 0 3px 6px rgba(0,0,0,0.9);
 }

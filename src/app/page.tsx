@@ -206,80 +206,81 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Magazine / Sponsor Callout (Sliding Covers Banner linking to doralfashionweekmagazine.com) */}
+        {/* Magazine / Sponsor Callout (Interactive Accordion Covers Slider linking to doralfashionweekmagazine.com) */}
         <section id="magazine" className="container section-spacer">
-          <a 
-            href="https://www.doralfashionweekmagazine.com" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="magazine-section reveal-el"
-          >
-            {/* Infinite Horizontal Sliding Covers Track */}
-            <div className="magazine-covers-container">
-              {/* Row 1: sliding left */}
-              <div className="magazine-row magazine-marquee-left">
-                {[
-                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
-                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
-                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
-                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
-                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
-                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
-                  // Duplicated for infinite loop
-                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
-                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
-                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
-                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
-                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
-                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
-                ].map((c, i) => (
-                  <div key={i} className="magazine-card">
-                    <img src={c.img} alt={c.title} />
-                    <span className="magazine-card-masthead">DORAL</span>
-                    <span className="magazine-card-footer">{c.issue}</span>
-                  </div>
-                ))}
+          <div className="magazine-grid reveal-el">
+            
+            {/* Left Column: Info and Custom Logo */}
+            <div className="magazine-info-col">
+              {/* Custom Typographic Logo */}
+              <div className="magazine-logo-block">
+                <span className="magazine-logo-title">DORAL</span>
+                <span className="magazine-logo-sub">FASHION WEEK</span>
+                <span className="magazine-logo-tag">M A G A Z I N E</span>
               </div>
-
-              {/* Row 2: sliding right */}
-              <div className="magazine-row magazine-marquee-right">
-                {[
-                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
-                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
-                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
-                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
-                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
-                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
-                  // Duplicated for infinite loop
-                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
-                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
-                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
-                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
-                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
-                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
-                ].map((c, i) => (
-                  <div key={i} className="magazine-card">
-                    <img src={c.img} alt={c.title} />
-                    <span className="magazine-card-masthead">DORAL</span>
-                    <span className="magazine-card-footer">{c.issue}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Radial Overlay to preserve high contrast for text */}
-            <div className="magazine-overlay" />
-
-            {/* Central Content Box */}
-            <div className="magazine-content-box">
-              <span className="magazine-subtitle">Official Publication</span>
-              <h2 className="magazine-title">Doral Fashion Week Magazine</h2>
-              <p className="magazine-description">
-                Explore exclusive interviews with world-class designers, editorial runway highlights, backstage secrets, and the vibrant evolution of Miami's high-fashion landscapes.
+              
+              <p className="secondary-text" style={{ textJustify: 'unset', textAlign: 'left', marginBottom: '2.5rem' }}>
+                Explore exclusive interviews with world-class designers, editorial runway highlights, backstage secrets, and the vibrant evolution of Miami's high-fashion landscapes. Read the digital copies of DFW Magazine online.
               </p>
-              <span className="btn-premium">DISCOVER THE PUBLICATION</span>
+              
+              <a 
+                href="https://www.doralfashionweekmagazine.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-premium"
+              >
+                DISCOVER THE MAGAZINE &rarr;
+              </a>
             </div>
-          </a>
+
+            {/* Right Column: Interactive Accordion Covers */}
+            <div className="magazine-accordion">
+              {[
+                { 
+                  img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&h=600&q=80', 
+                  tag: 'Issue 08 // Spring 2026', 
+                  title: 'THE FUTURE OF COUTURE' 
+                },
+                { 
+                  img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&h=600&q=80', 
+                  tag: 'Issue 07 // Autumn 2025', 
+                  title: 'MIAMI SOUL & SUN' 
+                },
+                { 
+                  img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&h=600&q=80', 
+                  tag: 'Issue 06 // Summer 2025', 
+                  title: 'AVANT GARDE VOL. I' 
+                },
+                { 
+                  img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&h=600&q=80', 
+                  tag: 'Issue 05 // Winter 2024', 
+                  title: 'THE INAUGURAL RUN' 
+                },
+                { 
+                  img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&h=600&q=80', 
+                  tag: 'Issue 04 // Spring 2024', 
+                  title: 'COLOR & GEOMETRY' 
+                }
+              ].map((cover, i) => (
+                <a 
+                  key={i}
+                  href="https://www.doralfashionweekmagazine.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="accordion-panel animate-panel"
+                >
+                  <img src={cover.img} alt={cover.title} />
+                  <div className="accordion-overlay" />
+                  <span className="accordion-masthead">DORAL</span>
+                  <div className="accordion-info">
+                    <span className="accordion-panel-tag">{cover.tag}</span>
+                    <h3 className="accordion-panel-title">{cover.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+          </div>
         </section>
 
         {/* Editions Section */}
