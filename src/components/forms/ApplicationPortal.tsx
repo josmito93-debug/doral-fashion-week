@@ -16,7 +16,13 @@ const ROLES = [
   { id: 'sponsor', label: 'Sponsor', icon: Briefcase, description: 'Strategic industry partner' },
 ]
 
-export const ApplicationPortal = ({ defaultRole: initialRole, onClose }: { defaultRole?: string, onClose?: () => void }) => {
+interface ApplicationPortalProps {
+  defaultRole?: string
+  onClose?: () => void
+  isStandalone?: boolean
+}
+
+export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandalone = false }: ApplicationPortalProps) => {
   const searchParams = useSearchParams()
   const [role, setRole] = useState<string | null>(null)
   const [step, setStep] = useState(0) // 0: Select Role, 1: Details, 2: Signature, 3: Success
@@ -126,21 +132,23 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose }: { defau
           </motion.button>
         )}
         
-        <div className="portal-header">
-          <img 
-            src="/logo/logo doral FW.png" 
-            alt="Doral Fashion Week Logo" 
-            className="h-16 md:h-20 mb-4 object-contain"
-          />
-          <h2 className="portal-subtitle">
-            {role ? `PROTOCOL: ${role.toUpperCase()}_INTAKE` : 'Where style meets high-fashion evolution.'}
-          </h2>
-          <h3 className="portal-title">
-            {role ? `${role} admission` : "Admission portal"}
-          </h3>
-        </div>
+        {!isStandalone && (
+          <div className="portal-header">
+            <img 
+              src="/logo/logo doral FW.png" 
+              alt="Doral Fashion Week Logo" 
+              className="h-16 md:h-20 mb-4 object-contain"
+            />
+            <h2 className="portal-subtitle">
+              {role ? `PROTOCOL: ${role.toUpperCase()}_INTAKE` : 'Where style meets high-fashion evolution.'}
+            </h2>
+            <h3 className="portal-title">
+              {role ? `${role} admission` : "Admission portal"}
+            </h3>
+          </div>
+        )}
 
-        <div className="w-full h-1 bg-white/5 mb-4 relative">
+        <div className="w-full h-1 bg-white/5 mb-4 relative mt-4">
           <motion.div 
             className="absolute top-0 left-0 h-full bg-accent"
             animate={{ width: `${(step / 3) * 100}%` }}
@@ -242,28 +250,26 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose }: { defau
                         placeholder="ID NUMBER"
                       />
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                       <div className="flex flex-col">
-                         <label className="form-label">DOB / Nacimiento</label>
-                         <input 
-                           type="date" 
-                           required 
-                           value={formData.dob}
-                           onChange={(e) => updateField('dob', e.target.value)}
-                           className="form-input" 
-                           style={{ padding: '0.95rem 1rem' }}
-                         />
-                       </div>
-                       <div className="flex flex-col">
-                         <label className="form-label">Age / Edad</label>
-                         <input 
-                           type="number" 
-                           required 
-                           value={formData.age}
-                           onChange={(e) => updateField('age', e.target.value)}
-                           className="form-input" 
-                         />
-                       </div>
+                    
+                    <div className="flex flex-col">
+                      <label className="form-label">DOB / Nacimiento</label>
+                      <input 
+                        type="date" 
+                        required 
+                        value={formData.dob}
+                        onChange={(e) => updateField('dob', e.target.value)}
+                        className="form-input" 
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="form-label">Age / Edad</label>
+                      <input 
+                        type="number" 
+                        required 
+                        value={formData.age}
+                        onChange={(e) => updateField('age', e.target.value)}
+                        className="form-input" 
+                      />
                     </div>
                     
                     <div className="flex flex-col">
@@ -311,27 +317,25 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose }: { defau
                             className="form-input" 
                           />
                         </div>
-                        <div className="grid grid-cols-2 gap-4 form-full-width">
-                           <div className="flex flex-col">
-                             <label className="form-label">City/State</label>
-                             <input 
-                               type="text" 
-                               required 
-                               value={formData.cityState}
-                               onChange={(e) => updateField('cityState', e.target.value)}
-                               className="form-input" 
-                             />
-                           </div>
-                           <div className="flex flex-col">
-                             <label className="form-label">Zip Code</label>
-                             <input 
-                               type="text" 
-                               required 
-                               value={formData.zip}
-                               onChange={(e) => updateField('zip', e.target.value)}
-                               className="form-input" 
-                             />
-                           </div>
+                        <div className="flex flex-col">
+                          <label className="form-label">City/State</label>
+                          <input 
+                            type="text" 
+                            required 
+                            value={formData.cityState}
+                            onChange={(e) => updateField('cityState', e.target.value)}
+                            className="form-input" 
+                          />
+                        </div>
+                        <div className="flex flex-col">
+                          <label className="form-label">Zip Code</label>
+                          <input 
+                            type="text" 
+                            required 
+                            value={formData.zip}
+                            onChange={(e) => updateField('zip', e.target.value)}
+                            className="form-input" 
+                          />
                         </div>
                       </>
                     )}

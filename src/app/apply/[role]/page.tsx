@@ -42,8 +42,8 @@ export default async function ApplyPage({ params }: { params: Promise<{ role: st
 
   return (
     <main className="bg-black min-h-screen relative pb-24 text-white">
-      {/* Floating Symmetric Pill Navbar (To navigate back Home easily) */}
-      <nav className="fixed top-8 left-50 -translate-x-1/2 z-50">
+      {/* Floating Symmetric Pill Navbar (Clean and centered, inherits globals.css layout) */}
+      <nav>
         <div className="nav-col-left">
           <Link href="/#home">Home</Link>
           <Link href="/#applications">Applications</Link>
@@ -89,7 +89,7 @@ export default async function ApplyPage({ params }: { params: Promise<{ role: st
             <div className="camera-hud-text animate-pulse">INITIALIZING_{roleLower.toUpperCase()}_PROTOCOL...</div>
           </div>
         }>
-          <ApplicationPortal defaultRole={roleLower} />
+          <ApplicationPortal defaultRole={roleLower} isStandalone={true} />
         </Suspense>
       </section>
     </main>

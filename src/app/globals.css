@@ -794,15 +794,10 @@ footer {
 
 /* Custom Portal & Form Styles for Dedicated Pages */
 .portal-container {
-    background-color: rgba(10, 10, 10, 0.7) !important;
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 16px;
-    padding: 3.5rem 3rem !important;
-    margin: 2rem auto;
     width: 100%;
-    max-width: 900px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 4rem 0 !important;
     position: relative;
     z-index: 10;
 }
