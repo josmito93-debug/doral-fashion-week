@@ -115,7 +115,7 @@ export default function LinksPage() {
           background: rgba(255, 255, 255, 0.05);
           border-radius: 12px;
           overflow: hidden;
-          transition: all 0.5s ease;
+          transition: all 0.4s ease;
           width: 100%;
         }
         .gradient-border-card::before {
@@ -132,11 +132,11 @@ export default function LinksPage() {
             transparent 70%
           );
           animation: borderRotate 4s linear infinite;
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-        .gradient-border-card:hover::before {
           opacity: 1;
+        }
+        .gradient-border-card:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(212, 175, 55, 0.12);
         }
         .gradient-border-card-inner {
           position: relative;
