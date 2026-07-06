@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
 
     if (error) {
       console.error('Resend Error:', error)
-      return NextResponse.json({ message: 'Email dispatch failed', error }, { status: 500 })
+      return NextResponse.json({ message: `Email dispatch failed: ${error.message || JSON.stringify(error)}`, error }, { status: 500 })
     }
 
     return NextResponse.json({ message: 'Application filed successfully', emailData }, { status: 200 })
