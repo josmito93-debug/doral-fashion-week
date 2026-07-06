@@ -159,11 +159,11 @@ export default function LinksPage() {
         
         {/* Logo and Header */}
         <div className="text-center mb-12">
-          <Link href="/">
+          <Link href="/" className="inline-flex justify-center items-center mb-4">
             <img 
               src="/logo/logo doral FW.png" 
               alt="Doral Fashion Week Logo" 
-              className="h-24 mx-auto mb-6 object-contain hover:scale-105 transition-transform duration-500" 
+              className="h-14 object-contain hover:scale-105 transition-transform duration-500" 
             />
           </Link>
           <h1 className="text-2xl md:text-3xl font-heading text-white tracking-[0.08em] uppercase">
