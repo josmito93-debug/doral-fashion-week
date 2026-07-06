@@ -206,15 +206,80 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Magazine / Sponsor Callout */}
+        {/* Magazine / Sponsor Callout (Sliding Covers Banner linking to doralfashionweekmagazine.com) */}
         <section id="magazine" className="container section-spacer">
-          <div className="newsletter-box reveal-el text-center flex-col justify-center">
-            <h2 className="section-title mb-6">DFW Magazine</h2>
-            <p className="max-w-2xl mx-auto mb-8 text-white/60">
-              Próximamente disponible: La revista oficial de Doral Fashion Week. Entrevistas exclusivas, tendencias de pasarela y lo mejor de la moda y las artes de Miami.
-            </p>
-            <Link href="/apply/media" className="btn-premium">REQUEST MEDIA ACCREDITATION</Link>
-          </div>
+          <a 
+            href="https://www.doralfashionweekmagazine.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="magazine-section reveal-el"
+          >
+            {/* Infinite Horizontal Sliding Covers Track */}
+            <div className="magazine-covers-container">
+              {/* Row 1: sliding left */}
+              <div className="magazine-row magazine-marquee-left">
+                {[
+                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
+                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
+                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
+                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
+                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
+                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
+                  // Duplicated for infinite loop
+                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
+                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
+                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
+                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
+                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
+                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
+                ].map((c, i) => (
+                  <div key={i} className="magazine-card">
+                    <img src={c.img} alt={c.title} />
+                    <span className="magazine-card-masthead">DORAL</span>
+                    <span className="magazine-card-footer">{c.issue}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Row 2: sliding right */}
+              <div className="magazine-row magazine-marquee-right">
+                {[
+                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
+                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
+                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
+                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
+                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
+                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
+                  // Duplicated for infinite loop
+                  { img: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 03', title: 'RUNWAY ESSENCE' },
+                  { img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 04', title: 'COLOR LAB' },
+                  { img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 05', title: 'SPRING WARMTH' },
+                  { img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 06', title: 'EDITORIAL' },
+                  { img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 07', title: 'MIAMI COUTURE' },
+                  { img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&q=80', issue: 'ISSUE 08', title: 'THE INAUGURAL' },
+                ].map((c, i) => (
+                  <div key={i} className="magazine-card">
+                    <img src={c.img} alt={c.title} />
+                    <span className="magazine-card-masthead">DORAL</span>
+                    <span className="magazine-card-footer">{c.issue}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Radial Overlay to preserve high contrast for text */}
+            <div className="magazine-overlay" />
+
+            {/* Central Content Box */}
+            <div className="magazine-content-box">
+              <span className="magazine-subtitle">Official Publication</span>
+              <h2 className="magazine-title">Doral Fashion Week Magazine</h2>
+              <p className="magazine-description">
+                Explore exclusive interviews with world-class designers, editorial runway highlights, backstage secrets, and the vibrant evolution of Miami's high-fashion landscapes.
+              </p>
+              <span className="btn-premium">DISCOVER THE PUBLICATION</span>
+            </div>
+          </a>
         </section>
 
         {/* Editions Section */}
@@ -330,7 +395,9 @@ export default function Home() {
               <input type="email" placeholder="Enter your email address" required />
               <div className="checkbox-group">
                 <input type="checkbox" id="privacy" required />
-                <label htmlFor="privacy">I agree with Privacy Policy and Terms & Conditions</label>
+                <label htmlFor="privacy" className="text-white/60">
+                  I agree with the <Link href="/privacy" className="underline text-accent hover:text-white transition-colors">Privacy Policy</Link> and <Link href="/terms" className="underline text-accent hover:text-white transition-colors">Terms & Conditions</Link>
+                </label>
               </div>
               <button type="submit" className="btn-premium">Subscribe</button>
             </form>
@@ -364,8 +431,8 @@ export default function Home() {
               <h4>About</h4>
               <a href="#about" onClick={(e) => handleSmoothScroll(e, '#about')}>Features</a>
               <a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')}>Sponsors</a>
-              <a href="#privacy" onClick={(e) => { e.preventDefault(); alert('Privacy Policy coming soon.'); }}>Privacy Policy</a>
-              <a href="#terms" onClick={(e) => { e.preventDefault(); alert('Terms & Conditions coming soon.'); }}>Terms & Conditions</a>
+              <Link href="/privacy" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Privacy Policy</Link>
+              <Link href="/terms" className="block text-left text-[var(--text-secondary)] hover:text-[var(--accent)] mb-4 transition-all duration-300 hover:pl-2">Terms & Conditions</Link>
             </div>
           </div>
         </div>

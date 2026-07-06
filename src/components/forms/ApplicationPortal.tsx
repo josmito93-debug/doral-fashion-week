@@ -342,7 +342,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                   </div>
                   
                   {role === 'model' && (
-                    <div className="space-y-6 pt-6 border-t border-white/10">
+                    <div className="space-y-6 form-section-divider">
                       <h5 className="brand-text text-xl text-accent font-bold">Measurements & Profile</h5>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[
@@ -370,7 +370,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                     </div>
                   )}
 
-                  <div className="flex flex-col pt-6 border-t border-white/10">
+                  <div className="flex flex-col form-section-divider">
                      <label className="form-label">Past Experience? / Experiencia Previa?</label>
                      <div className="flex gap-8 mb-4">
                         <label className="radio-container">
@@ -409,7 +409,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                   </div>
 
                   {['staff', 'makeup', 'media'].includes(role || '') && (
-                    <div className="flex flex-col pt-6 border-t border-white/10">
+                    <div className="flex flex-col form-section-divider">
                       <label className="form-label">Fiscal Status / Estatus Legal-Fiscal</label>
                       <select 
                         value={formData.fiscalStatus}

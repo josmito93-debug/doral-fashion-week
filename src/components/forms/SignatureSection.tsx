@@ -128,9 +128,9 @@ export const SignatureSection = ({ role, formData, onComplete }: SignatureSectio
         <p className="mt-4 border-t border-white/10 pt-4 italic">Al firmar digitalmente, usted confirma que ha leído y acepta todos los términos regidos por las leyes del Estado de Florida.</p>
       </div>
 
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center w-full form-section-divider">
         <label className="form-label mb-4">Digital Signature Required</label>
-        <div ref={containerRef} className="w-full h-64 bg-white/[0.03] border border-white/10 relative cursor-crosshair rounded-lg overflow-hidden mb-6">
+        <div ref={containerRef} className="w-full h-64 bg-white/[0.03] border border-white/10 relative cursor-crosshair rounded-lg overflow-hidden mb-8">
           <SignatureCanvas
             ref={sigCanvas}
             penColor="#D4AF37"
