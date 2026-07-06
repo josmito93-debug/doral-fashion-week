@@ -319,6 +319,21 @@ nav {
     margin-top: 1rem;
 }
 
+.section-title.text-center::after {
+    margin: 1rem auto 0 !important;
+}
+
+.section-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.08rem;
+    line-height: 1.6;
+    font-weight: 300;
+    max-width: 750px;
+    margin: 1.5rem auto 5rem !important;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+}
+
 /* About Section */
 .about-grid {
     display: grid;
