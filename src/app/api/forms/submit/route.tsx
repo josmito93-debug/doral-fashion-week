@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { data: emailData, error } = await resend.emails.send({
-      from: 'Doral Fashion Week HQ <registrations@idolfashiontheelitelab.com>',
+      from: 'Doral Fashion Week HQ <registrations@doralfashionweek.com>',
       to: [data.email, 'jose@idolfashiontheelitelab.com'],
       subject: content.subject,
       html: `
