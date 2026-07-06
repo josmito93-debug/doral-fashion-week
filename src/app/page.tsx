@@ -95,11 +95,13 @@ export default function Home() {
       </nav>
 
       <main id="home">
-        {/* Hero Section (Contains local Lottie background and bottom fade overlay) */}
+        {/* Hero Section (Contains local Lottie background, ambient glow and bottom fade overlay) */}
         <section className="hero container">
           <div ref={lottieContainerRef} id="lottie-container" className="global-background" />
           <div className="hero-fade-overlay" />
-          <div className="hero-content">
+          {/* Ambient Lighting */}
+          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-[var(--accent)]/10 rounded-full blur-[140px] pointer-events-none z-0" />
+          <div className="hero-content relative z-10">
             <h1 className="reveal-el">The most prominent<br />and innovative EVENT</h1>
             <p className="reveal-el">
               Miami's premier avant-garde fashion and visual arts incubator. Discover the future of style and shape the global runway from Doral.
@@ -109,9 +111,11 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="container section-spacer">
-          <h2 className="section-title reveal-el mb-12">About Us</h2>
-          <div className="about-grid reveal-el">
+        <section id="about" className="container section-spacer relative">
+          {/* Ambient Lighting */}
+          <div className="absolute top-[20%] -left-1/4 w-[350px] h-[350px] bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none z-0" />
+          <h2 className="section-title reveal-el mb-12 relative z-10">About Us</h2>
+          <div className="about-grid reveal-el relative z-10">
             <div className="about-col">
               <p className="premium-text">
                 Celebramos la diversidad, creatividad artística y vanguardia del diseño en Miami. Uniendo la moda de lujo con las artes plásticas.
@@ -127,9 +131,11 @@ export default function Home() {
         </section>
 
         {/* Applications Section (Stacked Rows with bottom animated gold lines) */}
-        <section id="applications" className="container section-spacer">
-          <h2 className="section-title reveal-el mb-4 text-center">Applications</h2>
-          <p className="section-subtitle reveal-el text-center max-w-3xl mx-auto mb-20 text-white/50">
+        <section id="applications" className="container section-spacer relative">
+          {/* Ambient Lighting */}
+          <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--accent)]/5 rounded-full blur-[140px] pointer-events-none z-0" />
+          <h2 className="section-title reveal-el mb-4 text-center relative z-10">Applications</h2>
+          <p className="section-subtitle reveal-el text-center max-w-3xl mx-auto mb-20 text-white/50 relative z-10">
             Doral Fashion Week: Unleash Your Inner Creativity – Become a Model, Designer, Photographer, Makeup Artist, or Event Staff. Your Path to Fashion Stardom Begins Here
           </p>
           
@@ -207,8 +213,10 @@ export default function Home() {
         </section>
 
         {/* Magazine / Sponsor Callout (Interactive Accordion Covers Slider linking to doralfashionweekmagazine.com) */}
-        <section id="magazine" className="container section-spacer">
-          <div className="magazine-grid reveal-el">
+        <section id="magazine" className="container section-spacer relative">
+          {/* Ambient Lighting */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-[var(--accent)]/5 rounded-full blur-[130px] pointer-events-none z-0" />
+          <div className="magazine-grid reveal-el relative z-10">
             
             {/* Left Column: Info and Logo Image */}
             <div className="magazine-info-col">
@@ -386,8 +394,10 @@ export default function Home() {
         </section>
 
         {/* Newsletter Section */}
-        <section id="newsletter" className="container section-spacer">
-          <div className="newsletter-box reveal-el">
+        <section id="newsletter" className="container section-spacer relative">
+          {/* Ambient Lighting */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[350px] bg-[var(--accent)]/5 rounded-full blur-[130px] pointer-events-none z-0" />
+          <div className="newsletter-box reveal-el relative z-10">
             <div className="newsletter-info">
               <h2>Newsletter</h2>
               <p>Be the first to know about upcoming editions, special events, and exclusive fashion insights.</p>
