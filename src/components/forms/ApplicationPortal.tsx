@@ -227,7 +227,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                 </div>
 
                 <h4 className="text-xl brand-text uppercase mb-8 underline underline-offset-8 text-accent font-bold">Step 02: Candidate Data</h4>
-                <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
+                <form className="space-y-10" onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
                   <div className="form-grid">
                     <div className="flex flex-col">
                       <label className="form-label">Full Name / Nombre Completo</label>
@@ -342,7 +342,7 @@ export const ApplicationPortal = ({ defaultRole: initialRole, onClose, isStandal
                   </div>
                   
                   {role === 'model' && (
-                    <div className="space-y-6 form-section-divider">
+                    <div className="space-y-10 form-section-divider">
                       <h5 className="brand-text text-xl text-accent font-bold">Measurements & Profile</h5>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[

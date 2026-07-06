@@ -88,8 +88,8 @@ export const SignatureSection = ({ role, formData, onComplete }: SignatureSectio
   }
 
   return (
-    <div className="w-full">
-      <div className="flex justify-between items-start mb-8 gap-4">
+    <div className="w-full space-y-10">
+      <div className="flex justify-between items-start gap-4">
         <div>
           <h4 className="text-xl brand-text uppercase underline underline-offset-8 text-accent font-bold">Step 03: Legal Binding</h4>
           <p className="camera-hud-text mt-4">Candidate Class: {role}</p>
