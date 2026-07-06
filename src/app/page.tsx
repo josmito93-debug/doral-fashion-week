@@ -210,14 +210,14 @@ export default function Home() {
         <section id="magazine" className="container section-spacer">
           <div className="magazine-grid reveal-el">
             
-            {/* Left Column: Info and Custom Logo */}
+            {/* Left Column: Info and Logo Image */}
             <div className="magazine-info-col">
-              {/* Custom Typographic Logo */}
-              <div className="magazine-logo-block">
-                <span className="magazine-logo-title">DORAL</span>
-                <span className="magazine-logo-sub">FASHION WEEK</span>
-                <span className="magazine-logo-tag">M A G A Z I N E</span>
-              </div>
+              {/* Official Magazine Logo Image */}
+              <img 
+                src="/logo/doralfashionweekmagazinelogo.png" 
+                alt="Doral Fashion Week Magazine Logo" 
+                className="h-16 md:h-20 object-contain mb-8 filter brightness-0 invert opacity-90"
+              />
               
               <p className="secondary-text" style={{ textJustify: 'unset', textAlign: 'left', marginBottom: '2.5rem' }}>
                 Explore exclusive interviews with world-class designers, editorial runway highlights, backstage secrets, and the vibrant evolution of Miami's high-fashion landscapes. Read the digital copies of DFW Magazine online.
@@ -237,29 +237,29 @@ export default function Home() {
             <div className="magazine-accordion">
               {[
                 { 
-                  img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=400&h=600&q=80', 
+                  img: '/revistas/edition10.jpg', 
+                  tag: 'Issue 10 // Autumn 2026', 
+                  title: 'Future of Elegance' 
+                },
+                { 
+                  img: '/revistas/edition09.png', 
+                  tag: 'Issue 09 // Summer 2026', 
+                  title: 'Runway Chronicles' 
+                },
+                { 
+                  img: '/revistas/edition08.png', 
                   tag: 'Issue 08 // Spring 2026', 
-                  title: 'THE FUTURE OF COUTURE' 
+                  title: 'Miami Couture' 
                 },
                 { 
-                  img: 'https://images.unsplash.com/photo-1539109132332-629bb4aa9116?auto=format&fit=crop&w=400&h=600&q=80', 
-                  tag: 'Issue 07 // Autumn 2025', 
-                  title: 'MIAMI SOUL & SUN' 
+                  img: '/revistas/edition07.png', 
+                  tag: 'Issue 07 // Winter 2025', 
+                  title: 'Avant Garde' 
                 },
                 { 
-                  img: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&h=600&q=80', 
-                  tag: 'Issue 06 // Summer 2025', 
-                  title: 'AVANT GARDE VOL. I' 
-                },
-                { 
-                  img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&h=600&q=80', 
-                  tag: 'Issue 05 // Winter 2024', 
-                  title: 'THE INAUGURAL RUN' 
-                },
-                { 
-                  img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&h=600&q=80', 
-                  tag: 'Issue 04 // Spring 2024', 
-                  title: 'COLOR & GEOMETRY' 
+                  img: '/revistas/edition06.png', 
+                  tag: 'Issue 06 // Autumn 2025', 
+                  title: 'Summer Editorial' 
                 }
               ].map((cover, i) => (
                 <a 
