@@ -420,7 +420,11 @@ export default function Home() {
       <footer className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <h2 className="logo-text">DORAL<br />FASHION<br />WEEK</h2>
+            <img 
+              src="/logo/logo doral FW.png" 
+              alt="Doral Fashion Week Logo" 
+              className="h-16 object-contain mb-6 hover:scale-105 transition-transform duration-500"
+            />
             <p>Have a question in mind? <a href="mailto:info@doralfashionweek.com">talk to us</a></p>
           </div>
           <div className="footer-links">
