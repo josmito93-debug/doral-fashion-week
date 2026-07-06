@@ -16,11 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className="relative min-h-screen bg-[#020202] text-white">
-        {/* Global Ambient Glows (Shared across all pages) */}
-        <div className="fixed top-[-10%] right-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[var(--accent)]/5 rounded-full blur-[140px] pointer-events-none z-0" />
-        <div className="fixed bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-[var(--accent)]/5 rounded-full blur-[140px] pointer-events-none z-0" />
-        <div className="fixed top-1/2 left-[10%] -translate-y-1/2 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] bg-white/[0.015] rounded-full blur-[120px] pointer-events-none z-0" />
+      <body className="relative min-h-screen bg-[#020202] text-white overflow-x-hidden">
+        {/* Global Ambient Glows (Shared across all pages, highly visible and elegant) */}
+        <div className="absolute top-[-5%] right-[-10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-[var(--accent)]/15 rounded-full blur-[100px] md:blur-[140px] pointer-events-none z-0" />
+        <div className="absolute top-[25%] left-[-15%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[var(--accent)]/10 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0" />
+        <div className="absolute top-[50%] right-[-5%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-white/[0.025] rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0" />
+        <div className="absolute bottom-[10%] left-[-10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-[var(--accent)]/12 rounded-full blur-[100px] md:blur-[140px] pointer-events-none z-0" />
         
         {/* Page Content */}
         <div className="relative z-10 w-full min-h-screen">

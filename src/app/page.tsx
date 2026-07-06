@@ -86,8 +86,10 @@ export default function Home() {
           <a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')}>Home</a>
           <a href="#applications" onClick={(e) => handleSmoothScroll(e, '#applications')}>Applications</a>
         </div>
-        <div className="logo">
-          <img src="/logo/logo doral FW.png" alt="Doral Fashion Week Logo" />
+        <div className="logo cursor-pointer">
+          <a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')} className="flex items-center">
+            <img src="/logo/logo doral FW.png" alt="Doral Fashion Week Logo" />
+          </a>
         </div>
         <div className="nav-col-right">
           <a href="#about" onClick={(e) => handleSmoothScroll(e, '#about')}>About</a>
@@ -497,11 +499,13 @@ export default function Home() {
       <footer className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img 
-              src="/logo/logo doral FW.png" 
-              alt="Doral Fashion Week Logo" 
-              className="h-16 object-contain mb-6 hover:scale-105 transition-transform duration-500"
-            />
+            <a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')} className="inline-block cursor-pointer">
+              <img 
+                src="/logo/logo doral FW.png" 
+                alt="Doral Fashion Week Logo" 
+                className="h-16 object-contain mb-6 hover:scale-105 transition-transform duration-500"
+              />
+            </a>
             <p>Have a question in mind? <a href="mailto:info@doralfashionweek.com">talk to us</a></p>
           </div>
           <div className="footer-links">
